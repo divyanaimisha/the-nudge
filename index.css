@@ -1,0 +1,138 @@
+.body {
+    background: #000;
+    color: #FFF;
+    font-family: Montserrat;
+    font-style: normal;
+    letter-spacing: 0.032px;
+}
+
+/* Loading Symbols */
+
+#loading {
+    margin-left: 45%;
+    margin-top: 20px;
+}
+
+.loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 30px;
+    height: 30px;
+    -webkit-animation: spin 2s linear infinite;
+    /* Safari */
+    animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+/* Button */
+
+.btn-custom {
+    border-radius: 2px;
+    background: linear-gradient(180deg, #FED520 0%, rgba(0, 0, 0, 0.00) 87.02%);
+    width: 200px;
+    border: 0px !important;
+}
+
+.tt-score-div {
+    border-radius: 11px;
+    background: linear-gradient(180deg, #FED520 85%, #000 100%);
+    box-shadow: 0px 4px 6px 3px rgba(0, 0, 0, 0.25);
+    color: #000;
+}
+
+.prog-container {
+    background: #f1f1f1;
+    border-radius: 35px;
+    overflow: hidden;
+}
+
+.prog-container .prog-bar {
+    background: linear-gradient(90deg, #f14e1e 0, #fec762 25%, #0ccf83 50%, #1bbbff 75%, #a159ff);
+    background-size: 100% 40px;
+    width: 100%;
+    max-width: 55%;
+    height: 35px;
+}
+
+.level-div {
+    border-radius: 11px;
+    background: linear-gradient(180deg, #CA905B 5.83%, #000 100%);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    color: #000;
+}
+
+.arrow {
+    margin-right: 5px;
+}
+
+.medal p {
+
+    margin-top: -11px;
+    margin-left: 1px;
+    color: white;
+    font-size: 12px;
+
+}
+
+.speaking-div {
+    border-radius: 11px;
+    background: linear-gradient(180deg, #CA915C 19.80%, #000 100%);
+    box-shadow: 0px 4px 6px 3px rgba(0, 0, 0, 0.25);
+    color: #000;
+
+}
+
+.round-min {
+    background: linear-gradient(180deg, #000 -152.28%, #CB925D 100%);
+    width: 120px;
+    border-radius: 100px;
+    font-size: 49px;
+    height: 120px;
+
+}
+
+.round-min p {
+
+    margin-left: 45px !important;
+    margin-top: 22px;
+}
+
+.custom-p-1 {
+    color: #000;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.014px;
+}
+
+.tip-div {
+    border-radius: 14px;
+    background: #D9D9D9;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
