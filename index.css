@@ -75,7 +75,14 @@
     width: 100%;
     max-width: 55%;
     height: 35px;
+    animation: progressAnimationStrike 6s;
+  }
+
+  @keyframes progressAnimationStrike {
+    from { width: 0 }
+    to   { width: 100% }
 }
+
 
 .level-div {
     border-radius: 11px;

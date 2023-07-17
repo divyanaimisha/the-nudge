@@ -33,7 +33,7 @@ $("#submitCsv").on('click', async function () {
     csv = csv.files[0];
     reader.readAsText(csv)
     reader.onload = async function () {
-        console.log("Text",reader.result)
+        console.log("Text", reader.result)
         var res = csvToArray(reader.result)
         console.log("Array", res)
         await uploadInDatabase(res)
@@ -41,11 +41,11 @@ $("#submitCsv").on('click', async function () {
 })
 
 function csvToArray(str, delimiter = ",", omitFirstRow = true) {
-    return(
-    str
-    .slice(omitFirstRow ? str.indexOf('\n') + 1 : 0)
-    .split('\n')
-    .map(v => v.split(delimiter))
+    return (
+        str
+            .slice(omitFirstRow ? str.indexOf('\n') + 1 : 0)
+            .split('\n')
+            .map(v => v.split(delimiter))
     );
 }
 
@@ -55,13 +55,14 @@ async function uploadInDatabase(array) {
         console.log(array[i]);
         //Upload in firestore
 
-        if(typeof(array[i][0])!="undefined" && array[i].length==5){
-            await setDoc(doc(db, 'users' ,array[i][0]), {
+        if (typeof (array[i][0]) != "undefined" && array[i].length >= 5) {
+            await setDoc(doc(db, 'users', array[i][0]), {
                 level: parseInt(array[i][4]),
                 goal: parseInt(array[i][2]),
                 name: array[i][1],
-                talktime: parseFloat(array[i][3])
-              });
+                talktime: parseFloat(array[i][3]),
+                stars: parseInt(array[i][5])
+            });
         }
 
         $("#loading").hide()
