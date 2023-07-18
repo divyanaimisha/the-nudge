@@ -105,7 +105,7 @@ function setUserData() {
         }
     }
 
-    $("#minutes").html(_USER_DATA.talktime)
+    $("#minutes").html(_USER_DATA.goal)
 
     for (var j = 1; j <= 3; j++) {
         if (_USER_DATA.stars >= j) {
