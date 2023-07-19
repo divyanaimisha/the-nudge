@@ -50,8 +50,7 @@
 /* Button */
 
 .btn-custom {
-    border-radius: 2px;
-    background: linear-gradient(180deg, #FED520 0%, rgba(0, 0, 0, 0.00) 87.02%);
+    background: #FED520;
     width: 200px;
     border: 0px !important;
 }
