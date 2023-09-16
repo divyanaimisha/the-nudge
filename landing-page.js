@@ -53,7 +53,7 @@ $(document).ready(function () {
     $(".gotoStep2").on('click', function () {
         console.log("bbbb")
   
-        if(!step1FormValid()){
+        if(step1FormValid()){
             $(".step-1").hide();
             $(".step-2").show();
             let data= {"action":"getdemoslots"}
