@@ -79,7 +79,7 @@ $(document).ready(function () {
                 data: { "action": "getdemoslots", "language": "Kannada" },
                 success: function (result) {
                     console.log(result);
-                    slots=reslult;
+                    slots=result;
                     updateSlots();
                 },
                 error: function (result) {
