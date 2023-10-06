@@ -61,34 +61,28 @@ $(document).ready(function () {
 
     }
 
-    $(".gotoStep2").on('click', function () {
-        console.log("bbbb")
-
+    $(".gotoStep2").on('click', async function () {
         if (step1FormValid()) {
             $(".step-1").hide();
             $(".step-2").show();
 
-            $.ajax({
-                url: 'https://el-chatbot-790176496.development.catalystserverless.com/get_data',
+            const url = 'https://el-chatbot-790176496.development.catalystserverless.com/get_data';
+
+            const data = '{"action":"getdemoslots","language":"Kannada"}';
+
+            const response = await fetch(url, {
+                method: 'POST',
                 headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                    'ZCFKEY': 'aab5bb6204a6c653a2e0590450e57d78'
+                    'ZCFKEY': 'aab5bb6204a6c653a2e0590450e57d78',
+                    'Cookie': '"46512fd555=bbdfb771565421abbe10f7a180903d28; ZD_CSRF_TOKEN=d8354dd1-9e69-4a70-97f5-73374b273234; _zcsr_tmp=d8354dd1-9e69-4a70-97f5-73374b273234"',
+                    'Content-Type': 'application/json',
                 },
-                type: "POST", /* or type:"GET" or type:"PUT" */
-                dataType: "json",
-                data: { "action": "getdemoslots", "language": "Kannada" },
-                success: function (result) {
-                    console.log(result);
-                    slots=result;
-                    updateSlots();
-                },
-                error: function (result) {
-                    console.log(result);
-                    console.log("error");
-                    slots = '{"Number_Of_Slots":"2","Slot1":"22 Sep, Fri 05:00 PM","1":"3527424000220791740","Slot2":"22 Sep, Fri 08:00PM","2":"3527424000220791770"}';
-                    updateSlots();
-                }
+                body: data,
             });
+
+            const slots = await response.text();
+            console.log(slots);
+            updateSlots();
         }
 
     })
@@ -109,7 +103,7 @@ $(document).ready(function () {
             "Age": "",
             "Mobile Number": $("#inputPhone").val(),
             "language": "kannada",
-            "pincode" : $("#inputPincode").val()
+            "pincode": $("#inputPincode").val()
         });
 
         console.log('sent params', raw);
