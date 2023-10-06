@@ -80,7 +80,7 @@ $(document).ready(function () {
                 body: data,
             });
 
-            const slots = await response.text();
+            slots = await response.text();
             console.log(slots);
             updateSlots();
         }
