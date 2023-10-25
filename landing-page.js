@@ -1,7 +1,10 @@
 $(document).ready(function () {
     var targetPosition = 600;
-    var slots = '';
+    var slots = '{"Number_Of_Slots":"2","Slot1":"22 Sep, Fri 05:00 PM","1":"3527424000220791740","Slot2":"22 Sep, Fri 08:00PM","2":"3527424000220791770"}';
 
+    // ----------------------------------------------------
+    // Dynamically change number of people in UI
+    // ----------------------------------------------------
     var onScroll = function () {
         var scrollPosition = $(this).scrollTop();
         // console.log(scrollPosition);
@@ -22,6 +25,10 @@ $(document).ready(function () {
         }
     }
     $(window).on('scroll', onScroll);
+
+    // ----------------------------------------------------
+    // Validate Form in Step 1 before proceeding
+    // ----------------------------------------------------
 
     function step1FormValid() {
         let validation = true;
@@ -46,8 +53,20 @@ $(document).ready(function () {
         } else {
             $("#inputPincodeFeedback").hide()
         }
+
+        if (!$("#customWhatsappCheck").is(":checked")) {
+            $("#inputWhatsappFeedback").show()
+            validation = false;
+        } else {
+            $("#inputWhatsappFeedback").hide()
+        }
+
         return validation;
     }
+
+    // ----------------------------------------------------
+    // Update Total slots in UI
+    // ----------------------------------------------------
 
     function updateSlots() {
         let slotsObj = JSON.parse(slots);
@@ -55,11 +74,15 @@ $(document).ready(function () {
         let html = ""
         for (var i = 0; i < parseInt(slotsObj['Number_Of_Slots']); i++) {
             console.log(slotsObj['Slot' + (i + 1)]);
-            html = html + '<label class="btn btn-weekdays"><input type="radio" name="options" id="' + slotsObj['Slot' + (i + 1)] + '" checked> ' + slotsObj['Slot' + (i + 1)] + '</label>'
+            html = html + '<label class="btn btn-weekdays"><input class="slotInputs" type="radio" name="options" id="' + slotsObj['Slot' + (i + 1)] + '" checked> ' + slotsObj['Slot' + (i + 1)] + '</label>'
         }
         $(".slotsDiv").html(html)
 
     }
+
+    // ----------------------------------------------------
+    // Go to Step 2, update UI
+    // ----------------------------------------------------
 
     $(".gotoStep2").on('click', async function () {
         if (step1FormValid()) {
@@ -87,7 +110,26 @@ $(document).ready(function () {
 
     })
 
+    // ----------------------------------------------------
+    // Go to Step 3, update UI
+    // ----------------------------------------------------
+
     $(".gotoStep3").on('click', function () {
+
+        let selectedSlot=""; //data
+
+        for(let i=0; i< $(".slotInputs").length; i++){
+            if($(".slotInputs")[i].checked){
+                selectedSlot = $(".slotInputs")[1].id;
+            }
+        }
+
+        if(selectedSlot==""){
+            $("#selectSlotError").show()
+            return;
+        }else{
+            $("#selectSlotError").hide()
+        }
 
         $(".step-1").hide();
         $(".step-2").hide();
@@ -103,6 +145,7 @@ $(document).ready(function () {
             "Age": "",
             "Mobile Number": $("#inputPhone").val(),
             "language": "kannada",
+            "slot" : selectedSlot,
             "pincode": $("#inputPincode").val()
         });
 

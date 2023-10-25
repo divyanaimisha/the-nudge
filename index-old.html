@@ -1,0 +1,557 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="The Nudge - Gamification Website">
+    <meta name="title" property="og:title" content="The Nudge - Gamification Website">
+    <meta name="image" property="og:image" content="The Nudge - Gamification Website">
+    <meta name="description" property="og:description" content="The Nudge: Upload File">
+    <link rel="stylesheet" href="/the-nudge/index.css">
+    <link href='' rel='shortcut icon' type='image/x-icon' />
+    <title>The Nudge - Gamification Website</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="body">
+    <div class="container">
+        <div class="step-1" style="width: 100%;">
+            <div class="row mt-5 pt-3 d-flex justify-content-center">
+                <svg width="141" height="267" viewBox="0 0 141 267" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_1_205)">
+                        <path d="M49.5699 267L0 248.841L91.4293 3.05176e-05L141 18.1594L49.5699 267Z" fill="#FED520" />
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_1_205">
+                            <rect width="141" height="267" fill="white" />
+                        </clipPath>
+                    </defs>
+                </svg>
+            </div>
+            <div class="row">
+                <div class="input-group mb-3 mt-4 mx-4">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">+91</span>
+                    </div>
+                    <input type="number" id="phoneNumber" class="form-control" placeholder="XXXXXXXXX"
+                        aria-label="Phone Number" aria-describedby="basic-addon1">
+                </div>
+                <button type="button" class="btn btn-custom m-auto" id="phoneNumberSubmit">Submit</button>
+                <p class="text-center mx-3 h6 mt-2">
+                    <small>
+                        Note: Make sure it is the phone number
+                        you have used to register with us!
+                    </small>
+                </p>
+            </div>
+        </div>
+        <div class="step-2" style="display:none;">
+            <div class="row mt-5 pt-3 d-flex justify-content-center">
+                <svg width="141" height="267" viewBox="0 0 141 267" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_1_205)">
+                        <path d="M49.5699 267L0 248.841L91.4293 3.05176e-05L141 18.1594L49.5699 267Z" fill="#FED520" />
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_1_205">
+                            <rect width="141" height="267" fill="white" />
+                        </clipPath>
+                    </defs>
+                </svg>
+                <p class="text-center mx-3 mt-4 h6">
+                    <small>
+                        Your Achievements are loading...
+                    </small>
+                </p>
+                <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                <lottie-player src="https://lottie.host/2526c9e3-649d-4a4d-bfa5-2c08e26ac81f/pQwQKyv0j5.json"
+                    background="#000" speed="1" style="width: 300px; height: 50px" loop autoplay direction="1"
+                    mode="normal"></lottie-player>
+            </div>
+        </div>
+
+        <div class="step-3 mb-5" style="width: 100%; display:none;">
+            <div class="row mx-4">
+                <img width="95%" class="mx-auto mt-4 rounded" src="/the-nudge/profile-img.png" alt="Profile Pic">
+            </div>
+            <div class="row d-flex justify-content-center mt-3">
+                <p class="text-center">Welcome <span id="userName"></span></p>
+            </div>
+            <div class="row d-flex justify-content-center mt-3 tt-score-div mx-2 p-2">
+                <div class="text-left">
+                    <h5 class="font-weight-bold mt-3">Talking Score</h5>
+                    <p class="font-weight-bold">
+                        <small>
+                            <span id="talkTimeMsg"> Congratulations! You have achieved your talking goal today.
+                                🎉🎉</span>
+                        </small>
+                    </p>
+                    <div class="prog-container mb-2">
+                        <div class="prog-bar l-100"></div>
+                    </div>
+                    <div class="text-center mb-2 pb-3">
+                        <p> You spoke for <span id="counterAnimation"> </span> / <span id="goalTime"> </span> Minutes
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center mt-3 level-div mx-2 p-2">
+                <div class="col-12">
+                    <h5 class="font-weight-bold mt-3">Level Badge</h5>
+
+                </div>
+                <div class=" medalPlaceholder medalPlaceholder-0" style="display: none;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 44" fill="none">
+                        <path
+                            d="M17.5 0.728256L34.3875 11.4864V33.0027L17.5 43.7609L0.612505 33.0027V11.4864L17.5 0.728256Z"
+                            fill="#D9D9D9" />
+                    </svg>
+                </div>
+                <div class="medal-1 medal" style="display: none;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="42" height="53" viewBox="0 0 42 53" fill="none">
+                        <g filter="url(#filter0_d_58_290)">
+                            <path d="M12.7374 24.7126L16.6102 26.9486L8.74569 40.5704L6.48841 35.5361L12.7374 24.7126Z"
+                                fill="#AA75CB" />
+                            <path d="M12.7374 24.7126L8.86451 22.4766L0.999976 36.0984L6.48841 35.5361L12.7374 24.7126Z"
+                                fill="#73488D" />
+                            <path d="M18.2626 24.7126L14.3897 26.9486L22.2543 40.5704L24.5115 35.5361L18.2626 24.7126Z"
+                                fill="#73488D" />
+                            <path d="M18.2626 24.7126L22.1354 22.4766L30 36.0984L24.5115 35.5361L18.2626 24.7126Z"
+                                fill="#AA75CB" />
+                            <circle cx="15.4938" cy="15.3335" r="13.8335" fill="#DC9E42" stroke="#774700" />
+                            <circle cx="15.4938" cy="15.3335" r="10.408" fill="#734C12" />
+                            <mask id="mask0_58_290" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="5" y="6"
+                                width="22" height="21">
+                                <circle cx="16.0493" cy="16.4446" r="10.4322" fill="#C28B37" />
+                            </mask>
+                            <g mask="url(#mask0_58_290)">
+                                <circle cx="15.4939" cy="15.3335" r="10.4322" fill="#A36D1D" />
+                            </g>
+                            <path
+                                d="M15.55 8.07602L17.8004 12.5768L22.3012 13.1394L19.2106 16.6049L20.0508 21.5783L15.55 19.3279L11.0493 21.5783L11.8969 16.6049L8.79889 13.1394L13.2996 12.5768L15.55 8.07602Z"
+                                fill="url(#paint0_linear_58_290)" />
+                        </g>
+                        <defs>
+                            <filter id="filter0_d_58_290" x="0.216502" y="0.216502" width="41.5359" height="52.1063"
+                                filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                <feColorMatrix in="SourceAlpha" type="matrix"
+                                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                <feOffset dx="5.48449" dy="5.48449" />
+                                <feGaussianBlur stdDeviation="3.13399" />
+                                <feComposite in2="hardAlpha" operator="out" />
+                                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.3 0" />
+                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_58_290" />
+                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_58_290"
+                                    result="shape" />
+                            </filter>
+                            <linearGradient id="paint0_linear_58_290" x1="15.55" y1="8.07602" x2="15.55" y2="21.5783"
+                                gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#FCFF80" />
+                                <stop offset="0.401042" stop-color="#FDE870" />
+                                <stop offset="1" stop-color="#FFC759" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <p><small>Bronze</small></p>
+                </div>
+
+                <div class="arrow-1 arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="24" viewBox="0 0 21 24" fill="none">
+                        <path
+                            d="M20.0607 13.0607C20.6464 12.4749 20.6464 11.5251 20.0607 10.9393L10.5147 1.3934C9.92893 0.807611 8.97919 0.807611 8.3934 1.3934C7.80761 1.97919 7.80761 2.92893 8.3934 3.51472L16.8787 12L8.3934 20.4853C7.80761 21.0711 7.80761 22.0208 8.3934 22.6066C8.97919 23.1924 9.92893 23.1924 10.5147 22.6066L20.0607 13.0607ZM0 13.5H19V10.5H0V13.5Z"
+                            fill="#DAAC82" />
+                    </svg>
+                </div>
+                <div class=" medalPlaceholder medalPlaceholder-1" style="display: none;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 44" fill="none">
+                        <path
+                            d="M17.5 0.728256L34.3875 11.4864V33.0027L17.5 43.7609L0.612505 33.0027V11.4864L17.5 0.728256Z"
+                            fill="#D9D9D9" />
+                    </svg>
+                </div>
+                <div class="medal-2 medal" style="display: none;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="42" height="53" viewBox="0 0 143 196" fill="none">
+                        <g filter="url(#filter0_d_3_49)">
+                            <path d="M51.1867 98.7451L67.6715 108.263L34.1961 166.244L24.588 144.815L51.1867 98.7451Z"
+                                fill="#418ED6" />
+                            <path d="M51.1867 98.7451L34.7019 89.2276L1.22654 147.209L24.588 144.815L51.1867 98.7451Z"
+                                fill="#2B63A6" />
+                            <path d="M74.7048 98.7451L58.22 108.263L91.6954 166.244L101.303 144.815L74.7048 98.7451Z"
+                                fill="#2B63A6" />
+                            <path d="M74.7048 98.7451L91.1896 89.2276L124.665 147.209L101.303 144.815L74.7048 98.7451Z"
+                                fill="#418ED6" />
+                            <circle cx="62.9191" cy="58.8229" r="57.2539" fill="#E3E3E3" stroke="#404040" />
+                            <circle cx="62.9191" cy="58.8229" r="44.3016" fill="#595959" />
+                            <mask id="mask0_3_49" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="20" y="19"
+                                width="90" height="89">
+                                <circle cx="65.2839" cy="63.5524" r="44.4047" fill="#C28B37" />
+                            </mask>
+                            <g mask="url(#mask0_3_49)">
+                                <circle cx="62.9191" cy="58.8229" r="44.4047" fill="url(#paint0_linear_3_49)" />
+                            </g>
+                            <path
+                                d="M63.1586 27.9315L72.7374 47.0889L91.8948 49.4836L78.74 64.2348L82.3161 85.4038L63.1586 75.8251L44.0012 85.4038L47.6092 64.2348L34.4225 49.4836L53.5799 47.0889L63.1586 27.9315Z"
+                                fill="url(#paint1_linear_3_49)" />
+                        </g>
+                        <defs>
+                            <filter id="filter0_d_3_49" x="0.443034" y="0.285464" width="135.974" height="177.711"
+                                filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                <feColorMatrix in="SourceAlpha" type="matrix"
+                                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                <feOffset dx="5.48449" dy="5.48449" />
+                                <feGaussianBlur stdDeviation="3.13399" />
+                                <feComposite in2="hardAlpha" operator="out" />
+                                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.3 0" />
+                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_3_49" />
+                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_3_49"
+                                    result="shape" />
+                            </filter>
+                            <linearGradient id="paint0_linear_3_49" x1="62.9191" y1="14.4182" x2="62.9191" y2="103.228"
+                                gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#9CA1A3" />
+                                <stop offset="1" stop-color="#9CA1A3" stop-opacity="0" />
+                            </linearGradient>
+                            <linearGradient id="paint1_linear_3_49" x1="63.1586" y1="27.9315" x2="63.1586" y2="85.4038"
+                                gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#F1F5F5" />
+                                <stop offset="0.0001" stop-color="white" />
+                                <stop offset="1" stop-color="#F1F5F5" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <p><small>&nbsp;Silver</small></p>
+
+                </div>
+                <div class="arrow-2 arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="24" viewBox="0 0 21 24" fill="none">
+                        <path
+                            d="M20.0607 13.0607C20.6464 12.4749 20.6464 11.5251 20.0607 10.9393L10.5147 1.3934C9.92893 0.807611 8.97919 0.807611 8.3934 1.3934C7.80761 1.97919 7.80761 2.92893 8.3934 3.51472L16.8787 12L8.3934 20.4853C7.80761 21.0711 7.80761 22.0208 8.3934 22.6066C8.97919 23.1924 9.92893 23.1924 10.5147 22.6066L20.0607 13.0607ZM0 13.5H19V10.5H0V13.5Z"
+                            fill="#DAAC82" />
+                    </svg>
+                </div>
+                <div class=" medalPlaceholder medalPlaceholder-2" style="display: none;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 44" fill="none">
+                        <path
+                            d="M17.5 0.728256L34.3875 11.4864V33.0027L17.5 43.7609L0.612505 33.0027V11.4864L17.5 0.728256Z"
+                            fill="#D9D9D9" />
+                    </svg>
+                </div>
+                <div class="medal-3 medal" style="display: none;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="42" height="53" viewBox="0 0 143 196" fill="none">
+                        <g filter="url(#filter0_d_3_50)">
+                            <path d="M57.7428 115.83L74.2276 125.348L40.7522 183.329L31.1441 161.901L57.7428 115.83Z"
+                                fill="#CE4444" />
+                            <path d="M57.7428 115.83L41.258 106.313L7.78265 164.294L31.1441 161.901L57.7428 115.83Z"
+                                fill="#983535" />
+                            <path d="M81.2608 115.83L64.776 125.348L98.2514 183.329L107.859 161.901L81.2608 115.83Z"
+                                fill="#983535" />
+                            <path d="M81.2608 115.83L97.7456 106.313L131.221 164.294L107.859 161.901L81.2608 115.83Z"
+                                fill="#CE4444" />
+                            <circle cx="68.9962" cy="75.9081" r="57.2539" fill="url(#paint0_linear_3_50)"
+                                stroke="#765C00" />
+                            <circle cx="68.9962" cy="75.9081" r="44.3016" fill="#A88300" />
+                            <mask id="mask0_3_50" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="26" y="36"
+                                width="90" height="90">
+                                <circle cx="71.361" cy="80.6376" r="44.4047" fill="#C28B37" />
+                            </mask>
+                            <g mask="url(#mask0_3_50)">
+                                <circle cx="68.9962" cy="75.9081" r="44.4047" fill="#C09525" />
+                            </g>
+                            <path
+                                d="M69.2357 45.0167L78.8144 64.1741L97.9719 66.5688L84.8171 81.32L88.3931 102.489L69.2357 92.9103L50.0783 102.489L53.6862 81.32L40.4995 66.5688L59.657 64.1741L69.2357 45.0167Z"
+                                fill="url(#paint1_linear_3_50)" />
+                            <path
+                                d="M14.1198 41.5033L20.3653 27.758L14.1198 14.0126L27.8651 20.2582L41.6105 14.0126L35.365 27.758L41.6105 41.5033L27.8651 35.2578L14.1198 41.5033Z"
+                                fill="white" />
+                        </g>
+                        <defs>
+                            <filter id="filter0_d_3_50" x="6.99915" y="13.2291" width="135.974" height="181.852"
+                                filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                <feColorMatrix in="SourceAlpha" type="matrix"
+                                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                <feOffset dx="5.48449" dy="5.48449" />
+                                <feGaussianBlur stdDeviation="3.13399" />
+                                <feComposite in2="hardAlpha" operator="out" />
+                                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.3 0" />
+                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_3_50" />
+                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_3_50"
+                                    result="shape" />
+                            </filter>
+                            <linearGradient id="paint0_linear_3_50" x1="68.9962" y1="19.1542" x2="68.9962" y2="132.662"
+                                gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#FFC600" />
+                                <stop offset="1" stop-color="#FFDE69" />
+                            </linearGradient>
+                            <linearGradient id="paint1_linear_3_50" x1="69.2357" y1="45.0167" x2="69.2357" y2="102.489"
+                                gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#FFFCDD" />
+                                <stop offset="1" stop-color="#FFE896" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <p><small>&nbsp;&nbsp;Gold</small></p>
+
+                </div>
+                <div class="arrow-3 arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="24" viewBox="0 0 21 24" fill="none">
+                        <path
+                            d="M20.0607 13.0607C20.6464 12.4749 20.6464 11.5251 20.0607 10.9393L10.5147 1.3934C9.92893 0.807611 8.97919 0.807611 8.3934 1.3934C7.80761 1.97919 7.80761 2.92893 8.3934 3.51472L16.8787 12L8.3934 20.4853C7.80761 21.0711 7.80761 22.0208 8.3934 22.6066C8.97919 23.1924 9.92893 23.1924 10.5147 22.6066L20.0607 13.0607ZM0 13.5H19V10.5H0V13.5Z"
+                            fill="#DAAC82" />
+                    </svg>
+                </div>
+                <div class=" medalPlaceholder medalPlaceholder-3" style="display: none;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 44" fill="none">
+                        <path
+                            d="M17.5 0.728256L34.3875 11.4864V33.0027L17.5 43.7609L0.612505 33.0027V11.4864L17.5 0.728256Z"
+                            fill="#D9D9D9" />
+                    </svg>
+                </div>
+                <div class="medal-4 medal" style="display: none;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="54" viewBox="0 0 48 54" fill="none">
+                        <g filter="url(#filter0_d_205_243)">
+                            <path d="M9.88654 22.649H27.2829V42L18.5847 36.3209L9.88654 42V22.649Z" fill="#004BF6" />
+                            <path d="M9.88654 20.7647H27.2829V40.1158L18.5847 34.4367L9.88654 40.1158V20.7647Z"
+                                fill="#024AF6" />
+                            <path d="M27.283 42V22.649H25.9147V41.1067L27.283 42Z" fill="#004BF6" />
+                            <path d="M9.88663 42V22.649H11.2549V41.1067L9.88663 42Z" fill="#004BF6" />
+                            <rect x="9.88654" y="24.2831" width="17.3964" height="12.7052"
+                                fill="url(#paint0_linear_205_243)" />
+                            <circle cx="18.5848" cy="17.5395" r="13.0848" fill="#5281EF" stroke="black" />
+                            <ellipse cx="18.6583" cy="17.6289" rx="10.1543" ry="10.0932" fill="#D3A911" />
+                            <mask id="mask0_205_243" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="9" y="8"
+                                width="21" height="21">
+                                <circle cx="19.1507" cy="18.6864" r="10.1367" fill="#C28B37" />
+                            </mask>
+                            <g mask="url(#mask0_205_243)">
+                                <circle cx="18.6109" cy="17.6068" r="10.1367" fill="#C09525" />
+                            </g>
+                            <path
+                                d="M18.6826 31.0218C26.1197 31.0218 32.2625 25.0915 32.2625 17.6373C32.2625 10.183 26.1197 4.25274 18.6826 4.25274C11.2454 4.25274 5.1026 10.183 5.1026 17.6373C5.1026 25.0915 11.2454 31.0218 18.6826 31.0218Z"
+                                fill="#0139BA" stroke="#172952" stroke-width="6.83155" />
+                            <mask id="mask1_205_243" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="8" y="7"
+                                width="22" height="22">
+                                <ellipse cx="18.8448" cy="18.2279" rx="10.4403" ry="10.5538" fill="#C28B37" />
+                            </mask>
+                            <g mask="url(#mask1_205_243)">
+                                <ellipse cx="18.2889" cy="17.1038" rx="10.4403" ry="10.5538" fill="#338E94" />
+                            </g>
+                            <path
+                                d="M26.49 9.69782L27.6559 7.13188L26.49 4.56594L29.0559 5.73184L31.6218 4.56594L30.4559 7.13188L31.6218 9.69782L29.0559 8.53192L26.49 9.69782Z"
+                                fill="white" />
+                        </g>
+                        <path d="M23.8372 13.8923L19.2175 11.1853L21.0257 13.3482L23.8372 13.8923Z" fill="white" />
+                        <path d="M24.4676 14.3194L21.239 13.6948L23.3548 17.3597L24.4676 14.3194Z" fill="white" />
+                        <path d="M20.9449 13.7849L18.7639 17.5624H23.1258L20.9449 13.7849Z" fill="white" />
+                        <path d="M20.6242 13.3355L18.5478 10.8516L16.3922 13.3355H20.6242Z" fill="white" />
+                        <path d="M16.0639 21.6397L18.2449 17.8622H13.8831L16.0639 21.6397Z" fill="white" />
+                        <path d="M13.8831 17.5624H18.2449L16.0639 13.7849L13.8831 17.5624Z" fill="white" />
+                        <path d="M23.1258 17.8622H18.7639L20.9449 21.6397L23.1258 17.8622Z" fill="white" />
+                        <path d="M17.8515 11.1966L13.1882 13.889L15.9847 13.3479L17.8515 11.1966Z" fill="white" />
+                        <path d="M18.5044 18.012L16.3235 21.7895H20.6854L18.5044 18.012Z" fill="white" />
+                        <path d="M20.6854 13.6351H16.3235L18.5044 17.4126L20.6854 13.6351Z" fill="white" />
+                        <path d="M24.5189 20.3733V15.0512L23.5448 17.7123L24.5189 20.3733Z" fill="white" />
+                        <path d="M19.1573 24.2277L23.8206 21.5354L21.024 22.0765L19.1573 24.2277Z" fill="white" />
+                        <path d="M21.239 21.7298L24.4676 21.105L23.3548 18.0649L21.239 21.7298Z" fill="white" />
+                        <path d="M16.3845 22.0891L18.4609 24.573L20.6166 22.0891H16.3845Z" fill="white" />
+                        <path d="M15.77 13.6948L12.5412 14.3194L13.6541 17.3597L15.77 13.6948Z" fill="white" />
+                        <path d="M12.4897 15.051V20.3735L13.4638 17.7124L12.4897 15.051Z" fill="white" />
+                        <path d="M13.6541 18.0649L12.5412 21.105L15.77 21.7299L13.6541 18.0649Z" fill="white" />
+                        <path d="M13.1714 21.5322L17.7913 24.2391L15.9832 22.0762L13.1714 21.5322Z" fill="white" />
+                        <defs>
+                            <filter id="filter0_d_205_243" x="0.903331" y="0.0534773" width="46.5275" height="53.699"
+                                filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                <feColorMatrix in="SourceAlpha" type="matrix"
+                                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                <feOffset dx="5.48449" dy="5.48449" />
+                                <feGaussianBlur stdDeviation="3.13399" />
+                                <feComposite in2="hardAlpha" operator="out" />
+                                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.3 0" />
+                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_205_243" />
+                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_205_243"
+                                    result="shape" />
+                            </filter>
+                            <linearGradient id="paint0_linear_205_243" x1="18.5847" y1="24.2831" x2="18.5847"
+                                y2="36.9883" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#024AF6" />
+                                <stop offset="1" stop-opacity="0" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <p><small>Diamond</small></p>
+
+                </div>
+                <div class="arrow-4 arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="24" viewBox="0 0 21 24" fill="none">
+                        <path
+                            d="M20.0607 13.0607C20.6464 12.4749 20.6464 11.5251 20.0607 10.9393L10.5147 1.3934C9.92893 0.807611 8.97919 0.807611 8.3934 1.3934C7.80761 1.97919 7.80761 2.92893 8.3934 3.51472L16.8787 12L8.3934 20.4853C7.80761 21.0711 7.80761 22.0208 8.3934 22.6066C8.97919 23.1924 9.92893 23.1924 10.5147 22.6066L20.0607 13.0607ZM0 13.5H19V10.5H0V13.5Z"
+                            fill="#DAAC82" />
+                    </svg>
+                </div>
+                <div class=" medalPlaceholder medalPlaceholder-4" style="display: none;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 44" fill="none">
+                        <path
+                            d="M17.5 0.728256L34.3875 11.4864V33.0027L17.5 43.7609L0.612505 33.0027V11.4864L17.5 0.728256Z"
+                            fill="#D9D9D9" />
+                    </svg>
+                </div>
+                <div class="medal-5 medal" style="display: none;">
+
+                    <svg width="48" height="54" viewBox="0 0 198 297" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g filter="url(#filter0_d_3_203)">
+                            <rect x="87.6223" y="145.834" width="12.1035" height="53.9156" fill="#BF7F02" />
+                            <path
+                                d="M32.2348 223.386C32.2348 215.002 39.0316 208.205 47.416 208.205H140.334C148.718 208.205 155.515 215.002 155.515 223.386V271.796H32.2348V223.386Z"
+                                fill="#243B6D" />
+                            <path
+                                d="M79.92 205.481C79.92 201.708 82.9786 198.649 86.7516 198.649H100.596C104.369 198.649 107.428 201.708 107.428 205.481V208.552H79.92V205.481Z"
+                                fill="#DCAE0C" />
+                            <rect x="49.9697" y="226.31" width="88.5093" height="30.1924" fill="#F9B50E"
+                                stroke="#FFEC86" stroke-width="3.91749" />
+                            <path d="M55.7132 224.351H97.5253L130.535 258.461H88.7227L55.7132 224.351Z"
+                                fill="#FFEC86" />
+                            <rect x="24.4759" y="271.796" width="137.936" height="13.2038" fill="#DE9300" />
+                            <path
+                                d="M93.5311 8.74832L121.244 64.1747L122.082 65.8501L123.941 66.0825L179.013 72.9665L141.091 115.49L139.972 116.745L140.252 118.403L150.619 179.772L95.0963 152.01L93.5311 151.227L91.9659 152.01L36.454 179.766L46.9117 118.408L47.1952 116.745L46.0709 115.487L8.05895 72.9653L63.1215 66.0825L64.9802 65.8501L65.8179 64.1747L93.5311 8.74832Z"
+                                fill="#FFEC86" stroke="#FFB802" stroke-width="7" />
+                            <path
+                                d="M93.5311 42.6655L112.316 80.2345L149.885 84.9306L124.087 113.859L131.1 155.373L93.5311 136.588L55.9621 155.373L63.0376 113.859L37.1776 84.9306L74.7466 80.2345L93.5311 42.6655Z"
+                                fill="#DE9300" />
+                            <path
+                                d="M93.9485 136.588L131.796 155.372C131.796 155.372 128.767 131.828 98.0143 113.859C67.2621 95.8899 75.0249 80.2344 75.0249 80.2344L37.1776 84.9306L63.2291 113.859L56.1012 155.372L93.9485 136.588Z"
+                                fill="#CB8600" />
+                            <path
+                                d="M125.256 236.728L130.856 224.402L125.256 212.076L137.582 217.676L149.908 212.076L144.307 224.402L149.908 236.728L137.582 231.127L125.256 236.728Z"
+                                fill="white" />
+                        </g>
+                        <defs>
+                            <filter id="filter0_d_3_203" x="0.216502" y="0.138591" width="197.598" height="296.614"
+                                filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                <feColorMatrix in="SourceAlpha" type="matrix"
+                                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                <feOffset dx="5.48449" dy="5.48449" />
+                                <feGaussianBlur stdDeviation="3.13399" />
+                                <feComposite in2="hardAlpha" operator="out" />
+                                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.3 0" />
+                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_3_203" />
+                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_3_203"
+                                    result="shape" />
+                            </filter>
+                        </defs>
+                    </svg>
+
+                    <p class="mt-1"><small>&nbsp;&nbsp;&nbsp;&nbsp;Star</small></p>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center mt-3 speaking-div mx-2 p-2 pb-5">
+                <div class="col-12">
+                    <h5 class="font-weight-bold mt-3 text-center mb-3">Your goal is</h5>
+                </div>
+                <div class="round-min">
+                    <p class="mx-auto"><span id="minutes">8</span></p>
+                </div>
+                <div class="col-12 d-flex justify-content-center">
+                    <p class="font-weight-bold">Minutes</p>
+                </div>
+                <div class="col-12 d-flex justify-content-center text-center">
+                    <p class="font-weight-bold custom-p-1">Reach your goal more to get more stars and get all three stars to get a new badge! 🌟</p>
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <div class="mt-1 mx-1 star-filled-1 star-filled" style="display: none;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="87" height="86" viewBox="0 0 87 86" fill="none">
+                            <path
+                                d="M43.5 4L55.599 30.0446L82.9688 34.0578L63.0765 54.1674L67.8931 82.6922L43.5 69.076L19.1069 82.6922L23.9235 54.1674L4.03115 34.0578L31.401 30.0446L43.5 4Z"
+                                fill="url(#paint0_linear_51_209)" stroke="black" stroke-width="3" />
+                            <defs>
+                                <linearGradient id="paint0_linear_51_209" x1="44" y1="-112.5" x2="114" y2="242.5"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#DFFF17" />
+                                    <stop offset="0.300116" stop-color="white" />
+                                    <stop offset="0.510836" stop-color="#867906" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <div class="mt-5 mx-1 star-filled-2 star-filled" style="display: none;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="87" height="86" viewBox="0 0 87 86" fill="none">
+                            <path
+                                d="M43.5 4L55.599 30.0446L82.9688 34.0578L63.0765 54.1674L67.8931 82.6922L43.5 69.076L19.1069 82.6922L23.9235 54.1674L4.03115 34.0578L31.401 30.0446L43.5 4Z"
+                                fill="url(#paint0_linear_51_209)" stroke="black" stroke-width="3" />
+                            <defs>
+                                <linearGradient id="paint0_linear_51_209" x1="44" y1="-112.5" x2="114" y2="242.5"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#DFFF17" />
+                                    <stop offset="0.300116" stop-color="white" />
+                                    <stop offset="0.510836" stop-color="#867906" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <div class="mt-1 mx-1 star-filled-3 star-filled" style="display: none;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="87" height="86" viewBox="0 0 87 86" fill="none">
+                            <path
+                                d="M43.5 4L55.599 30.0446L82.9688 34.0578L63.0765 54.1674L67.8931 82.6922L43.5 69.076L19.1069 82.6922L23.9235 54.1674L4.03115 34.0578L31.401 30.0446L43.5 4Z"
+                                fill="url(#paint0_linear_51_209)" stroke="black" stroke-width="3" />
+                            <defs>
+                                <linearGradient id="paint0_linear_51_209" x1="44" y1="-112.5" x2="114" y2="242.5"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#DFFF17" />
+                                    <stop offset="0.300116" stop-color="white" />
+                                    <stop offset="0.510836" stop-color="#867906" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <div class="mt-1 mx-1 star-empty-1 star-empty" style="display: none;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="87" height="86" viewBox="0 0 87 86" fill="none">
+                            <path
+                                d="M43.5 4L55.599 30.0446L82.9688 34.0578L63.0765 54.1674L67.8931 82.6922L43.5 69.076L19.1069 82.6922L23.9235 54.1674L4.03115 34.0578L31.401 30.0446L43.5 4Z"
+                                fill="#D9D9D9" stroke="black" stroke-width="3" />
+                        </svg>
+                    </div>
+                    <div class="mt-5 mx-1 star-empty-2 star-empty" style="display: none;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="87" height="86" viewBox="0 0 87 86" fill="none">
+                            <path
+                                d="M43.5 4L55.599 30.0446L82.9688 34.0578L63.0765 54.1674L67.8931 82.6922L43.5 69.076L19.1069 82.6922L23.9235 54.1674L4.03115 34.0578L31.401 30.0446L43.5 4Z"
+                                fill="#D9D9D9" stroke="black" stroke-width="3" />
+                        </svg>
+                    </div>
+                    <div class="mt-1 mx-1 star-empty-3 star-empty" style="display: none;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="87" height="86" viewBox="0 0 87 86" fill="none">
+                            <path
+                                d="M43.5 4L55.599 30.0446L82.9688 34.0578L63.0765 54.1674L67.8931 82.6922L43.5 69.076L19.1069 82.6922L23.9235 54.1674L4.03115 34.0578L31.401 30.0446L43.5 4Z"
+                                fill="#D9D9D9" stroke="black" stroke-width="3" />
+                        </svg>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row  d-flex justify-content-center mt-5 mx-2 p-2 tip-div">
+                <p class="custom-p-1 mb-0">
+                    Tip: The more you reach your goals,
+                    the more confidence you get!
+                </p>
+            </div>
+        </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+<script type="module" src="/the-nudge/index.js"></script>
+
+</html>
